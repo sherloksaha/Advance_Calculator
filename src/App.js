@@ -10,32 +10,70 @@ function App() {
   const [state, dispatch] = useReducers();
   return (
     <div className="maindiv">
-      <div >
-        <input style={{width:'70%',height:'40px',marginTop:'10px', marginLeft:'20px'}} value={state.PrevVal + state.currentOp} />
+      <h3>CALCULATOR</h3>
+      <div>
+        <input
+          className="input1"
+          value={state.PrevVal + state.currentOp}
+          disabled
+        />
       </div>
       <div>
-        <input style={{width:'70%',height:'25px',marginTop:'10px', marginLeft:'20px'}} value={state.currentVal} />
+        <input className="input2" value={state.currentVal} disabled />
       </div>
-    <div style={{width:'70%',height:'auto', display:'grid', marginTop:'10px', marginLeft:'20px'}}>
-    <div style={{ display: "flex" }}>
-        <LogicButton dispatch={dispatch} />
-      </div>
-      <div style={{ display: "flex" }}>
-        <ButtonSet2 dispatch={dispatch} />
-      </div>
-      <div style={{ display: "flex" }}>
-        <ButtonSet3 dispatch={dispatch} />
-      </div>
+      <div style={{ width: "70%", height: "auto", marginTop: "10px" }}>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-evenly",
+            paddingTop: "10px",
+          }}
+        >
+          <LogicButton dispatch={dispatch} />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-evenly",
+            paddingTop: "10px",
+          }}
+        >
+          <ButtonSet2 dispatch={dispatch} />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-evenly",
+            paddingTop: "10px",
+          }}
+        >
+          <ButtonSet3 dispatch={dispatch} />
+        </div>
 
-      <div style={{ display: "flex" }}>
-        <ButtonSet5 dispatch={dispatch} />
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-evenly",
+            paddingTop: "10px",
+          }}
+        >
+          <ButtonSet5 dispatch={dispatch} />
+        </div>
+        <div
+          style={{
+            display: "flex",
+            width: "100%",
+            justifyContent: "space-evenly",
+            paddingTop: "10px",
+          }}
+        >
+          <ButtonSet4 dispatch={dispatch} />
+        </div>
       </div>
-      <div style={{ display: "flex" }}>
-        <ButtonSet4 dispatch={dispatch} />
-      </div>
-      
-    </div>
-      
     </div>
   );
 }
